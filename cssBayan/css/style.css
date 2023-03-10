@@ -1,0 +1,35 @@
+body {
+    background: bisque;
+}
+
+h1 {
+    padding: 0.4em;
+    width: 320px;
+    margin: 0 auto;
+    border-bottom: 1px solid grey;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    border-bottom: 1px solid grey;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.img1,
+.img2,
+.img3,
+.img4,
+.img5 {
+    display: none;
+ }
+
+.mem1:checked ~ img {
+    display: block;
+}
