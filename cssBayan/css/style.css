@@ -2,38 +2,63 @@ body {
     background: bisque;
 }
 
+.mem-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.mem-container:hover {
+    cursor: pointer;
+}
+
+.mem-container:hover > label .title .cross {
+    display: block;
+}
+
 h1 {
-    margin-bottom: 0;
+    width: 80%;
+    margin: 0 auto;
     padding: 0.4em;
-    border-bottom: 1px solid grey;
+    color: darkgreen;
+    font-size: 2.2em;
 }
 
 h2 {
     font-size: 1.4em;
+    color: #b00000;
 }
 
 .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1em;
-    border-top: 1px solid grey;;
+    border-top: 2px solid black;
     border-bottom: 1px solid grey;
 }
 
+.title:hover {
+    cursor: pointer;
+}
+
 svg {
-    fill: black;
+    fill: #b00000;
 }
 
 img {
     display: block;
+    margin: 0 auto;
     max-height: 0;
-    width: 100%;
+    width: 80%;
     transition-duration: 1s;
 }
 
 .mem:checked ~ img {
     max-height: 100vh;
+    padding-bottom: 1em;
+}
+
+.mem:checked ~ label div.title {
+    border-bottom: none;
 }
 
 input {
@@ -41,8 +66,17 @@ input {
 }
 
 .cross {
+    display: none;
     transition-duration: 1s;
     transform: rotate(45deg);
+}
+
+.title:hover > .cross  {
+    display: block;
+}
+
+img:hover ~ label .title .cross {
+    display: block;
 }
 
 .mem:checked ~ label div.title div.cross {
@@ -73,23 +107,21 @@ input {
     h1 {
         width: 80%;
         margin: 0 auto;
+        font-size: 2.4em;
     }
 
-    .title {
-        width: 80%;
-        margin: 0 auto;
+    h2 {
+        font-size: 2em;
     }
 
-    .title:hover > h2 {
+    .mem-container:hover > label .title h2 {
         color: blue;
     }
 
-    .title:hover > div.cross svg {
+    .mem-container:hover > label .title .cross svg {
         fill: blue;
     }
 
-    .mem:checked ~ label div.title {
-        border-bottom: none;
-    }
+
 }
 
