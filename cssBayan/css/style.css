@@ -64,6 +64,7 @@ input {
 .cross {
     transition-duration: 1s;
     transform: rotate(45deg);
+    z-index: -1;
 }
 
 .mem:checked ~ label div.title div.cross {
