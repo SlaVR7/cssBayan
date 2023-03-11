@@ -57,6 +57,20 @@ img {
     padding-bottom: 1em;
 }
 
+.mem-container:hover > img {
+    max-height: 100vh;
+    padding-bottom: 1em;
+}
+
+.mem-container:hover > label .title {
+    border-bottom: none;
+}
+
+img:hover {
+    max-height: 100vh;
+    padding-bottom: 1em;
+}
+
 .mem:checked ~ label div.title {
     border-bottom: none;
 }
