@@ -7,14 +7,6 @@ body {
     margin: 0 auto;
 }
 
-.mem-container:hover {
-    cursor: pointer;
-}
-
-.mem-container:hover > label .title .cross {
-    display: block;
-}
-
 h1 {
     width: 80%;
     margin: 0 auto;
@@ -32,12 +24,8 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px solid black;
-    border-bottom: 1px solid grey;
-}
-
-.title:hover {
-    cursor: pointer;
+    border-top: 0.1em solid black;
+    border-bottom: 0.05em solid grey;
 }
 
 svg {
@@ -52,27 +40,21 @@ img {
     transition-duration: 1s;
 }
 
-.mem:checked ~ img {
+.mem:checked ~ label img {
     max-height: 100vh;
     padding-bottom: 1em;
 }
 
-.mem-container:hover > img {
-    max-height: 100vh;
-    padding-bottom: 1em;
-}
-
-.mem-container:hover > label .title {
+.mem:checked ~ label .title {
     border-bottom: none;
 }
 
-img:hover {
-    max-height: 100vh;
-    padding-bottom: 1em;
+.mem:checked ~ label .title .cross svg {
+    fill: blue;
 }
 
-.mem:checked ~ label div.title {
-    border-bottom: none;
+.mem:checked ~ label .title h2 {
+    color: blue;
 }
 
 input {
@@ -80,17 +62,8 @@ input {
 }
 
 .cross {
-    display: none;
     transition-duration: 1s;
     transform: rotate(45deg);
-}
-
-.title:hover > .cross  {
-    display: block;
-}
-
-img:hover ~ label .title .cross {
-    display: block;
 }
 
 .mem:checked ~ label div.title div.cross {
@@ -128,12 +101,62 @@ img:hover ~ label .title .cross {
         font-size: 2em;
     }
 
-    .mem-container:hover > label .title h2 {
-        color: blue;
+    .mem-container:hover {
+        cursor: pointer;
+    }
+
+    .mem-container:hover > label .title .cross {
+        display: block;
+    }
+
+
+    label:hover {
+        cursor: pointer;
+    }
+
+
+    .mem-container:hover > label img {
+        max-height: 100vh;
+        padding-bottom: 1em;
+    }
+
+    .mem-container:hover > label .title {
+        border-bottom: none;
+    }
+
+    img:hover {
+        max-height: 100vh;
+        padding-bottom: 1em;
+        scale: 1.05;
+    }
+
+
+    .title:hover > .cross  {
+        display: block;
+    }
+
+    img:hover ~ label .title .cross {
+        display: block;
+    }
+
+    .mem-container:hover > label .title .cross {
+        transform: none;
+    }
+
+    .mem:checked ~ label .title .cross svg {
+        fill: #b00000;
+    }
+
+    .mem:checked ~ label .title h2 {
+        color: #b00000;
     }
 
     .mem-container:hover > label .title .cross svg {
         fill: blue;
+    }
+
+    .mem-container:hover > label .title h2 {
+        color: blue;
     }
 
 
