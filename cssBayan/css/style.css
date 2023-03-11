@@ -3,10 +3,13 @@ body {
 }
 
 h1 {
+    margin-bottom: 0;
     padding: 0.4em;
-    width: 320px;
-    margin: 0 auto;
     border-bottom: 1px solid grey;
+}
+
+h2 {
+    font-size: 1.4em;
 }
 
 .title {
@@ -14,22 +17,79 @@ h1 {
     justify-content: space-between;
     align-items: center;
     padding: 0 1em;
+    border-top: 1px solid grey;;
     border-bottom: 1px solid grey;
+}
+
+svg {
+    fill: black;
 }
 
 img {
     display: block;
+    max-height: 0;
     width: 100%;
+    transition-duration: 1s;
 }
 
-.img1,
-.img2,
-.img3,
-.img4,
-.img5 {
+.mem:checked ~ img {
+    max-height: 100vh;
+}
+
+input {
     display: none;
- }
-
-.mem1:checked ~ img {
-    display: block;
 }
+
+.cross {
+    transition-duration: 1s;
+    transform: rotate(45deg);
+}
+
+.mem:checked ~ label div.title div.cross {
+    transform: none;
+}
+
+@media (max-width: 820px) and (min-width: 321px) {
+    body {
+        background-color: #c0eaff;
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: 6vw;
+    }
+
+    h2 {
+        font-size: 5vw;
+    }
+}
+
+@media (min-width: 821px) {
+    img {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .title {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .title:hover > h2 {
+        color: blue;
+    }
+
+    .title:hover > div.cross svg {
+        fill: blue;
+    }
+
+    .mem:checked ~ label div.title {
+        border-bottom: none;
+    }
+}
+
